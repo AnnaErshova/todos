@@ -1,12 +1,16 @@
 def fizzbuzz(num)
-	if (i % 3 != 0) && (i % 5 != 0)
-		puts i
-	elsif (i % 15 == 0)
-		puts "fizzbuzz"
-	elsif (i % 3 == 0) 
-		puts "fizz"
-	elsif (i % 5 == 0) 
-		puts "buzz"
+	if num > 1 $$ num < 101
+		if (i % 3 != 0) && (i % 5 != 0)
+			puts i
+		elsif (i % 15 == 0)
+			puts "fizzbuzz"
+		elsif (i % 3 == 0) 
+			puts "fizz"
+		elsif (i % 5 == 0) 
+			puts "buzz"
+		end
+	else
+		puts "Sorry, that was not a valid entry."
 	end
 end
 
