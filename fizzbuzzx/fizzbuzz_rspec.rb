@@ -19,7 +19,11 @@ describe "#fizzbuzz" do
 	end
 
 	it "should return invalid when poop is entered" do
-		expect(fizzbuzz("poop").to eq(false)
+		expect(fizzbuzz("poop")).to eq(nil)
+	end
+
+	it "should return invalid when 102 is entered" do
+		expect(fizzbuzz(102).to eq(nil)
 	end
 
 end
