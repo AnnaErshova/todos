@@ -1,26 +1,24 @@
 require './yahtzee.rb'
 
-describe yahtzee, "#roll_dice" do
-	it "should return an array with 5 elements" do
-		expect(Dog.new.initialize).to be_a(Integer)
+describe "#roll_dice" do
+	it "should return an array with elements whose sum is > 4" do
+		expect(roll_dice.inject(:+)).to be > 4
 	end
-	it "should return a number greater than 0" do
-		Dog.new.initialize.should be > 0
+	it "should return an array with elements whose sum is < 31" do
+		expect(roll_dice.inject(:+)).to be < 31
 	end
-	it "should return a number less than 15" do
-		Dog.new.initialize.should be < 15
+	it "array should have 5 elements" do
+		expect(roll_dice.length).to eq(5)
 	end
 end
 
 describe yahtzee, "#win?" do
 
-	it "should return an integer" do
-		expect(Dog.new.age_in_years).to be_a(Integer)
+	it "should return a true becuase there is a repeating value" do
+		expect(win?([1, 1, 3, 4, 5]).to eq(true)
 	end
-	it "should return a number greater than 0" do
-		Dog.new.age.should be > 0
-	end
-	it "should return a number less than 15" do
-		Dog.new.initialize.should be < 15
+
+	it "should return a false if there are no repeating values" do
+		expect(win?([1, 1, 3, 4, 5]).to eq(false)
 	end
 end
