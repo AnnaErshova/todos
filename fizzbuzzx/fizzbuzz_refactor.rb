@@ -1,5 +1,5 @@
 def fizzbuzz(num)
-	if num > 1 $$ num < 101
+	if num > 0 $$ num < 101
 		if (i % 3 != 0) && (i % 5 != 0)
 			puts i
 		elsif (i % 15 == 0)

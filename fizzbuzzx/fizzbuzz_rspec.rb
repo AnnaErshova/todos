@@ -1,3 +1,6 @@
+require './fizzbuzz_refactor.rb'
+
+
 describe "#fizzbuzz" do
 
 	it "should return fizzbuzz when number mod for 15 = 0" do
@@ -19,5 +22,5 @@ describe "#fizzbuzz" do
 	it "should return invalid when poop is entered" do
 		expect(fizzbuzz("poop")).to eq("Sorry, that was not a valid entry.")
 	end
-	
+
 end
