@@ -1,6 +1,5 @@
-# Apple Picker
+def apple_picker
 
-## Instructions
 
 Create a method, `apple_picker`, that will pick all the apples out of an array. Implement this only using `each`.
 

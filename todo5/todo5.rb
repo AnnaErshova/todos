@@ -45,9 +45,26 @@ ecrypt the wifi password and log onto the internet
 	user_imput = gets.chomp
 	user_imput.gsub!("ashley", " ")
 	user_imput.gsub!("blake", "e")
-	first_array = user_imput.split
-	second_array = first_array.sort { |x,y| y <=> x }
-	string = second_array.join(" ")
+	# first_array = user_imput.split
+	first_array = user_imput.split(" ")
+	new_array = []
+	new_array[2] = first_array[0]
+	new_array[0] = first_array[2]
+	new_array[1] = first_array[1]
+	string = new_array.join("_")
+	puts string.insert(0, ":")
 	symbol = string.to_sym
 	puts symbol
 #end
+
+
+
+
+
+
+
+
+
+
+
+

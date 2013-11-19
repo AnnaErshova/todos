@@ -52,6 +52,7 @@ languages = {
 # 		hash_2.each_pair do |type, interp_or_compliled|
 
 new_language_hash = {}
+
 languages.each do |style, lang_hash|
 	lang_hash.each do |lang_name, attribute_hash|
 		if new_language_hash[lang_name].nil?
