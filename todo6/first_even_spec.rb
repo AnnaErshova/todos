@@ -14,7 +14,7 @@ describe "first even" do
   end
 
   it "should return the first even number in an array" do
-    first_even([300, 22, 1, 55, 42]).should eq(22)
+    first_even([300, 22, 1, 55, 42]).should eq(300)
   end
 
 end
