@@ -96,6 +96,8 @@
   array_12 = [11,4,7,8,9,100,134]
   sum_12 = 0
   array_12.each { |num| sum_12 += num }
+  #or
+  sum = array_12.reduce(0) {|sum, item| sum + item}
 # 13. Add an "s" to each word in the array except for the 2nd element in the array
   array_13 = ["hand","feet", "knee", "table"]
   count_13 = 0
