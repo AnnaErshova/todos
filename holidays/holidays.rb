@@ -66,7 +66,20 @@ def all_supplies(holiday_supplies)
 	end
 end	
 
-#7. 
+#7. rite a method to collect all holidays with BBQ.
+#  `holidays_with_bbqs(holiday_supplies) #=> [:fourth_of_july, :memorial_day]`
+def collects_bbq(holiday_supplies)
+	bbq_holiday_array = []
+	holiday_supplies.each do |season, hash|
+		hash.each do |holiday, array|
+			if array.include?("BBQ")
+				bbq_holiday_array << holiday
+			end
+		end
+	end
+	bbq_holiday_array
+end
+
 
 
 
