@@ -17,6 +17,6 @@ end
 #                 if num % 2 == 0
 #                         even_number_array << num
 #                 end
-#         even_number_array[0]
 #         end
+#         even_number_array(0)
 # end
