@@ -1,5 +1,4 @@
-def first_even(array_of_numbers)
-	sorted_array = array_of_numbers.sort
+def first_even(sorted_array)
 	sorted_array.each do |num|
 		if num.even?
 			return num
@@ -12,11 +11,12 @@ end
 
 # def first_even(array_of_numbers)
 #         even_number_array = []
-#         sorted_array = array_of_numbers.sort
-#         sorted_array.each do |num|              
+#         array_of_numbers.each do |num|              
 #                 if num % 2 == 0
 #                         even_number_array << num
+#                         even_number_array[0]
+#                         break
 #                 end
 #         end
-#         even_number_array(0)
+
 # end
