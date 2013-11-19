@@ -26,7 +26,16 @@
   array.insert(1, scott)
   #or
   my_array(1, my_array.delete_at(2))
+  new_array = my_array[0], my_array[2], my_array[1]
 # 7. using the "my_array" array create a hash where the elements in the array are the keys and the values of the hash are those elements with the 3rd character changed to a dollar sign.
+    hash = {}
+    my_array.each do |name|
+       hash[name] = name[0..1] + "$" + name[3..name.length]
+    end
+    #or
+    my_array.each do |name|
+       hash[name] = name.gsub(name[2],"$")
+    end
     my_hash_7 = { :blake => bl$ke, :ashley => as$ley, :scott => sc$tt }
     # first attempt at converting array into hash, does not work: my_hash = my_array(3) { Hash.new }
 # 8. create a hash with two keys, "greater_than_10", "less_than_10" and their values will be an array of any numbers greater than 10 or less than 10 in the following array
@@ -45,14 +54,18 @@
     my_hash_9 = { :blake => "winner", :ashley => "loser", :caroline => "loser", :carlos => "winner" }
     winners_9 = []
     my_hash_9.each do |key,value|
-      if value == "winner"
-        winners_9 << key
-      end
+      value == "winner" ? winners_9 << key : nil
     end
 # 10. add the following arrays
   array_10a = [1,2,3]
   array_10b = [5,9,4]
   array_10c = array_10a + array_10b
+  #or
+  [1, 2, 3].push([5, 9, 4]).flatten
+  #or
+  [1,2,3].concat([5,9,4])
+  #or
+  [1,2,3] | [5,9,4]
 # 11. find all words that begin with "a" in the following array
   array_11 = ["apple", "orange", "pear", "avis", "arlo", "ascot" ]
   array_11.each do [element]
