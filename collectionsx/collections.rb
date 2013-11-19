@@ -6,7 +6,7 @@
 # 2. sort the following array in descending order]
   my_array.sort.reverse
 # 3. put the following array in reverse order
-  my_array.sort { |x,y| y <=> x }
+  my_array.reverse
 # 4. grab the second element in the array
   my_array[1]
 # 5. print each element of the array to the console
@@ -17,6 +17,15 @@
  #  ["blake", "scott", "ashley"]
   my_array[1] = "scott"
   my_array[2] = "ashley"
+  #or
+  my_array.replace([blake, scott, ashley])
+  #or
+  my_array.values_at(0,2,1)
+  #or
+  scott = my_array.pop
+  array.insert(1, scott)
+  #or
+  my_array(1, my_array.delete_at(2))
 # 7. using the "my_array" array create a hash where the elements in the array are the keys and the values of the hash are those elements with the 3rd character changed to a dollar sign.
     my_hash_7 = { :blake => bl$ke, :ashley => as$ley, :scott => sc$tt }
     # first attempt at converting array into hash, does not work: my_hash = my_array(3) { Hash.new }
