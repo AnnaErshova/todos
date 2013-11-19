@@ -69,7 +69,7 @@ if first_user_imput == "h"
 		end
 
 	elsif sum_two > 21
-		puts "I dealt ya another card and you hit #{sum_one}. Better luck next time."
+		puts "I dealt ya another card and you hit #{sum_two}. Better luck next time."
 	
 	end
 		
