@@ -68,10 +68,30 @@
   [1,2,3] | [5,9,4]
 # 11. find all words that begin with "a" in the following array
   array_11 = ["apple", "orange", "pear", "avis", "arlo", "ascot" ]
-  array_11.each do [element]
+  array_11.each do |element|
     if element[0] == "a"
       put element
     end
+    #or
+   array_11.select{|item| item[0] == "a" }
+   #or
+   container = []
+   array_11.each do |item|
+       if item[0] == "a"
+           container << item
+       end
+       container
+   end
+   #or
+   container = []
+   array_11.each do |item|
+       if item[0] == "a"
+           container << item
+       end
+       container
+   end
+   #or
+   array_11.select {|word| /^a/.match(word)}
 # 12. sum all the numbers in the following array
   array_12 = [11,4,7,8,9,100,134]
   sum_12 = 0
