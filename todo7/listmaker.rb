@@ -8,10 +8,24 @@
 
 # e.g make_list(["ich", "ni", "san"]) #=> ["1. ich", "2. ni", "3. san"]
 
-def make_list(array)
+def make_list_a(array)
 	string_array = []
-	array.each do |number|
-		string_array << number.to_s
+	array.each do |element|
+		string_array << element.to_s
+	end
+	numbered_array = []
+	counter = 0
+	string_array.each do |string|
+		counter += 1
+		numbered_array << "#{counter}:#{string}"
+	end
+	numbered_array
+end
+
+def make_list_b(array)
+	string_array = []
+	array.each do |element|
+		string_array << element.to_s
 	end
 	numbered_array = []
 	counter = 0
