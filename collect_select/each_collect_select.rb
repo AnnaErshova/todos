@@ -62,31 +62,27 @@ def my_collect(array_one)
 	array_two = []
 	i = 0
 	while i < array_one.length
-		new_element = yield array_one[i]
-		array_two << new_element
+		array_two << (yield array_one[i])
 		i += 1
 	end
 	array_two
 end
 
-# array_one = [1,2,3]
-# my_collect(array) {|element| puts element}
 
 
 def my_select(array_one)
 	i = 0
 	array_two = []
 	while i < array_one.length
-		if yield array[i] = true
-			array_two << new_element
+		x = yield array_one[i]
+		if x == true
+			array_two << array_one[i]
 		end
 		i += 1
 	end
 	array_two
 end
 
-# array_one = [1,2,3]
-# my_select(array) {|element| puts element}
 
 
 
