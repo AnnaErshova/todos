@@ -24,7 +24,8 @@ end
 
 def make_list_b(array)
 	string_array = []
-	array.each do |element|
+	a
+	rray.each do |element|
 		string_array << element.to_s
 	end
 	numbered_array = []
@@ -35,4 +36,34 @@ def make_list_b(array)
 	end
 	numbered_array
 end
+
+#examples during class
+
+def make_list(array)
+	y = []
+	array.each_with_index do |element, index|
+		index += 1
+		y << "#{index}. #{element}"
+	end
+	y
+end
+
+def make_list(array)
+	y = []
+	counter = 0
+	array.each do |element|
+		conter += 1
+		y << "#{counter}. #{element}"
+	end
+	y
+end
+
+
+
+
+
+
+
+
+
 
