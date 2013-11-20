@@ -39,15 +39,16 @@ end
 
 #examples during class
 
+#each_with_index
 def make_list(array)
 	y = []
 	array.each_with_index do |element, index|
-		index += 1
-		y << "#{index}. #{element}"
+		y << "#{index+1}. #{element}"
 	end
 	y
 end
 
+#each without index
 def make_list(array)
 	y = []
 	counter = 0
@@ -58,12 +59,12 @@ def make_list(array)
 	y
 end
 
-
-
-
-
-
-
-
+#with mapping
+class Array
+	def make_list
+		self.map._with_index { |element, index| "#{index+1}. #{element}" }
+		#map._with_index { |element, index| "#{index+1}. #{element}" } would also work
+	end
+end
 
 
