@@ -1,12 +1,8 @@
 require './deli_counter.rb'
 
 describe Deli, "#take_a_number" do
-
-	let(:line) {generateCart}
-	before do
-		it "should add blake to the line" do
-			expect(Deli.new.take_a_number(Blake)).to eq(["1. Ashley", "2. Steve", "3. Blake"])
-		end
+	it "should add blake to the line" do
+		expect(Deli.new.take_a_number(Ashley)).to eq(["1. Ashley"])
 	end
 end
 

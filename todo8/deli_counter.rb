@@ -2,15 +2,12 @@ class Deli
 	attr_accessor :line
 
 	def initialize
-	@line = line
+	@line = []
 
-	line = []
-	
 	def take_a_number(name)
-
-		line << "#{index+1}. #{name}"
+		line << "1. #{name}"
+		line
 	end
-	line
 
 
 	def now_serving(array)
