@@ -18,7 +18,7 @@ Your program should tell them they lose and exit.
 
 class Random_Num
 	def generate
-		rand(11)
+		rand(1..11)
 	end
 end
 
