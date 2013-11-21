@@ -6,16 +6,23 @@ class Deli
 	end
 
 	def take_a_number(name)
-		if line.nil?
-			line << "1. #{name}"
+		if @line.nil?
+			@line << "1. #{name}"
 		else
-			number = line.length + 1
-			line << "#{number}. #{name}"
+			number = @line.length + 1
+			@line << "#{number}. #{name}"
 		end
-		line
+		@line
 	end
 
-	def now_serving(array)
-		line.shift
+# 	def now_serving(line)
+# 		line.shift
+# 		line
+# 	end
+# end	
+
+	def now_serving
+		@line.shift
+		@line
 	end
 end
