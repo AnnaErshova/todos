@@ -59,7 +59,7 @@ def make_list(array)
 	y
 end
 
-#with mapping
+#with mapping and class
 class Array
 	def make_list
 		self.map._with_index { |element, index| "#{index+1}. #{element}" }
