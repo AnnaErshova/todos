@@ -9,12 +9,13 @@ class Deli
 		if line.nil?
 			line << "1. #{name}"
 		else
-			line << "#{(line.length + 1)}. #{name}"
+			number = line.length + 1
+			line << "#{number}. #{name}"
 		end
 		line
 	end
 
 	def now_serving(array)
-
+		line.shift
 	end
 end

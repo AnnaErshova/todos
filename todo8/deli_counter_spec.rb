@@ -2,7 +2,7 @@ require './deli_counter.rb'
 
 describe Deli, "#take_a_number" do
 	it "should add blake to the line" do
-		expect(Deli.new.take_a_number(Ashley)).to eq(["1. Ashley"])
+		expect(Deli.new.take_a_number("Ashley")).to eq(["1. Ashley"])
 	end
 end
 
