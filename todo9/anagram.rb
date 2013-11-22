@@ -5,11 +5,10 @@ class Anagram
 		@word = word
 	end
 
-	def match(string)
+	def match(array)
 		sorted_word = word.chars.sort.join
-		string_array = string.split(" ").to_a
 		sorted_array = []
-		string_array.each do |word|
+		array.each do |word|
 			sorted_array << word.to_s.chars.sort.join
 		end
 		matching_array = []
@@ -18,7 +17,15 @@ class Anagram
 				matching_array << word
 			end
 		end
-		matching_array
+		final_array = []
+		matching_array.each do |aegllry|
+			array.each do |largely|
+				if aegllry == largely.to_s.chars.sort.join
+					final_array << largely
+				end
+			end
+		end
+		final_array.uniq
 	end
 
 end
