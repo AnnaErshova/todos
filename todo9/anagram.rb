@@ -6,11 +6,19 @@ class Anagram
 	end
 
 	def match(string)
+		sorted_word = word.chars.sort.join
 		string_array = string.split(" ").to_a
+		sorted_array = []
 		string_array.each |word|
-			word.sort
-			array = []
-		array
+			sorted_array << word.chars.sort.join
+		end
+		matching_array = []
+		sorted_array.select |word|
+			if word == sorted_word
+				matching_array << word
+			end
+		end
+		matching_array
 	end
 end
 
