@@ -5,9 +5,10 @@ class Anagram
 		@word = word
 	end
 
-	def match(word)
-
-		if nil?
+	def match(string)
+		string_array = string.split(" ").to_a
+		string_array.each |word|
+			word.sort
 			array = []
 		array
 	end
