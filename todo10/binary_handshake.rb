@@ -10,63 +10,65 @@ class SecretHandshake
 
 	def commands
 		array = []
-		if num[0] == 1
+		int = num.to_i
+		if num[0] == "1"
 			##### 1 => wink
-			if num == 1
+			if int == 1
 				array << "wink"
 			##### 10 => double wink
-			elsif num > 9 && num < 100
-				num -= 10
+			elsif int > 9 && int < 100
+				int -= 10
 				array << "double blink"
-				if num == 1
+				if int == 1
 					array << "wink"
 				end
 			##### 100 => "close your eyes"
-			elsif num > 99 && num < 1
-				num -= 100
+			elsif int > 99 && int < 1000
+				int -= 100
 				array << "close your eyes"
-				if num[0] == 1
-					num -= 10
-					array << "double wink"
-					if num == 1
+				if int.to_s[0] == "1"
+					int -= 10
+					array << "double blink"
+					if int == 1
 						array << "wink"
 					end
 				end
 			##### 1000 => "jump"
-			elsif num > 999 && num < 1112
-				num -= 1000
+			elsif int > 999 && int < 1112
+				int -= 1000
 				array << "jump"
-				if num[0] == 1
-					num -= 100
+				if int.to_s[0] == "1"
+					int -= 100
 					array << "close your eyes"
-					if num[0] == 1
-						num -= 10
-						array << "double wink"
-						if num == 1
+					if int.to_s[0] == "1"
+						int -= 10
+						array << "double blink"
+						if int == 1
 							array << "wink"
 						end
 					end
 				end
 			##### 10,000 => reverse
-			elsif num > 9999 && num < 11112
-				num -= 10000
-				if num[0] == 1
-					num -= 1000
-					array << "wink"
-					if num[0] == 1
-						num -= 100
-						array << "double wink"
-						if num[0] == 1
-							num -= 10
-							array << "close your eyes"
-							if num == 1
-								array << "jump"
-							end
-						end
-					end
+			##### 01,234 => reverse
+			elsif int > 9999 && int < 11112
+				if num[1] == "1"
+					array << "jump"
 				end
+				if num[2] == "1"
+					array << "close your eyes"
+				end
+				if num[3] == "1"
+					array << "double blink"
+				end
+				if num[4] == "1"
+					array << "wink"
+				end
+			#ends if num == 1/10/100/1000/10000
 			end
+		#ends if num[0] == 1
 		end
 		array
+	#ends method
 	end
+#ends class
 end

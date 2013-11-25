@@ -35,11 +35,11 @@ describe 'SecretHandshake' do
 
   it 'should know to wink double blink with 11' do
     handshake = SecretHandshake.new("11")
-    handshake.commands.should eq(["wink","double blink"]) 
+    handshake.commands.should eq(["double blink", "wink"]) 
   end
 
   it 'should know to double blink, wink, with 10011' do
-    handshake = SecretHandshake.new("1011")
+    handshake = SecretHandshake.new("10011")
     handshake.commands.should eq(["double blink","wink"])
   end
 
