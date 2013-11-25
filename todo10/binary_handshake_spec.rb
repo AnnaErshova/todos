@@ -1,4 +1,4 @@
-require "./binary_handshake.rb"
+require "./binary_handshake"
 
 RSpec.configure do |config|
   # Use color in STDOUT
@@ -11,7 +11,8 @@ RSpec.configure do |config|
   config.formatter = :progress # :progress, :html, :textmate
 end
 
-describe 'SecretHandshake' do 
+describe 'SecretHandshake' do
+
   it 'should know how to wink with a 1' do
     handshake = SecretHandshake.new("1")
     handshake.commands.should eq(["wink"])
@@ -51,4 +52,5 @@ describe 'SecretHandshake' do
     handshake = SecretHandshake.new("binary")
     handshake.commands.should eq([])
   end
+
 end
