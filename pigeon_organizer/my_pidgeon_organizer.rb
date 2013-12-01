@@ -21,13 +21,16 @@ pigeon_data = {
 name_array = []
 pigeon_data[:gender].each {|k,v|v.each {|e|name_array<<e}}
 # insert empty hashes at odd numbered array indexes
-if index % 2 != 0
-	name_array.insert({})
+# name_array = ["Alex", "Theo", "Peter Jr.", "Andrew", "Lucky", "Queenie", "Ms .K"]
+i = 0
+name_array.each |name, i|
+	if i % 2 != 0
+		name_array.insert({})
+	end
+	i += 1
 end
+# name_array = ["Alex", {}, "Theo", {}, "Peter Jr.", {}, "Andrew", {}, "Lucky", {}, "Queenie", {}, "Ms .K", {}]
 # turn array elements into hash keys and turn array into a hash pigeon_list
-# format => h1 = Hash[*a1.flatten]
-pigeon_list = Hash[*name_array.flatten]
-#################################################### O R ############################
 count = 0
 pigeon_list = Hash.new
 (name_array.length / 2).times do
@@ -36,6 +39,7 @@ pigeon_list = Hash.new
 end
 pigeon_list
 #will have keys of names associated with empty hashes}
+# pigeon_list = {"Alex" => {}, "Theo" => {}, "Peter Jr." => {}, "Andrew" => {}, "Lucky" => {}, "Queenie" => {}, "Ms .K" =>{}]
 
 ##########   g e n d e r   a n d    l o c a t i o n   ############################
 
@@ -64,9 +68,10 @@ pigeon_data[:color].each do |k,v|
 end
 
 ###################################################################################
-pigeon_list
-print pigeon_list
 
+pigeon_list
+# print pigeon_list
+# puts pigeon_list
 
 # pigeon_list = {
 #   "Theo" => {
