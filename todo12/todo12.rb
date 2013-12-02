@@ -1,14 +1,30 @@
-
-puts "Please enter the message you would like to shorten: "
-imput = gets.chomp
-
-if imput.length > 140
-	no_2s = imput.gsub(/["to", "two" "too"]/, "2")
-	no_4s = no_2s.gsub(/["for", "four"]/, "4")
-	no_be = no_4s.gsub("be", "b")
-	no_you = no_be.gsub("you", "u")
-	no_at = no_you.gsub("at", "@")
-	no_and = no_at.gsub("and", "&")
+def shorten_tweet(string)
+	if imput.length > 140
+		new_array = []
+		array = imput.split
+		array.each do |word|
+			if word == "to" || "two" || "too"
+				new_array << "2"
+			elsif word == "for" || "four"
+				new_array << "4"
+			elsif word == "be"
+				new_array << "b"
+			elsif word == "you"
+				new_array << "u"
+			elsif word == "at"
+				new_array << "@"
+			elsif word == "and"
+				new_array << "&"
+			else
+				new_array << word
+			end
+		end
+		new_array
+		new_string = new_array.join(" ")
+		if new_string.length > 140
+			new_string.slice!(0..139) 
+		end
+		new_string
+	end
+	new_string
 end
-
-
