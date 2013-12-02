@@ -1,5 +1,5 @@
 def shorten_tweet(string)
-	if imput.length > 140
+	if string.length > 140
 		new_array = []
 		array = imput.split
 		array.each do |word|
