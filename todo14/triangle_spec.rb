@@ -16,6 +16,8 @@
 # http://phrogz.net/programmingruby/tut_exceptions.html
 # http://ablogaboutcode.com/2011/01/03/using-custom-error-messages-for-cleaner-code/
 
+require './triangle.rb'
+
 RSpec.configure do |config|
   # Use color in STDOUT
   config.color_enabled = true
