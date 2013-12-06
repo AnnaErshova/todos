@@ -1,12 +1,17 @@
-##################
-### A R R A Y ####
-##################
+###################
+#### A R R A Y ####
+###################
 
 def array_init(items = 5)
-	array = Array.new(items) { |i| yield i } 
+	if block_given? = false # see below :
+		array = Array.new(items) 
+		{ |i| yield i } 
+	else
+		array = Array.new(items) 
+		{ |i| (100 * i) }
+	end
+	
 end
-
-
 
 # http://apidock.com/ruby/Kernel/block_given%3F : 
 # def try
