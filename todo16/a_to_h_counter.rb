@@ -15,7 +15,7 @@ def count_elements(array)
 	# new_array
 
 	# Stack Overflow:
-	counts = Hash.new(0)
+	counts = Hash.new(0) # sets default value (the value that is returned when trying to access key that does not exist) to 0 instead of nil
 	array.each { |e| counts[e] += 1 }
 	counts
 end
