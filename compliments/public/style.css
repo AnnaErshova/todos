@@ -1,4 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
+@import url(http://fonts.googleapis.com/css?family=Special+Elite);
+
 body {
 	color: white;
 	background-color: black;
+	font-size: 1.5em;
+	line-height: 1.4em;
+	background-image: url("./bricks.jpg")
+}
+
+
+h1 {
+	text-align: center;
+	font-family:"Permanent Marker", Times, serif;
+}
+
+p {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	font-family:"Special Elite", Times, serif;}
+}
+
+img {
+	border: 3px solid white;
+    display: block;
+	margin: 0 auto;
+}
+
+.content {
+	width: 75%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 100px;
 }
