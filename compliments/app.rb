@@ -5,9 +5,9 @@ require './lib/compliment.rb'
 class Compliments < Sinatra::Application
 
 	get '/compliments' do
-		new_comp = Compliment.new
-		# @image = new_comp.image
-		@message = new_comp.message
+		new_compliment = Compliment.new.
+		@my_message = new_compliment.message
+		@my_image = new_compliment.image
 		erb :compliment
 	end
 
