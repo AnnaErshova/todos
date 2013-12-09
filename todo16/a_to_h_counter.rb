@@ -2,23 +2,20 @@
 ### A => H    C O U N T E R ###
 ###############################
 
-# Instructions:
-# Count elements in an Array by returning a hash with keys of the elements and values of the amount of times they occur.
-
-# test = ['cat', 'dog', 'fish', 'fish']
-
-# def count(array)
-#   ___
-# end
-
-# count(test) #=> { 'cat' => 1, 'dog' => 1, 'fish' => 2 })
-
 def count_elements(array)
-	hash = {}
-	counter = 1
-	array.each do |e|
-		hash[e] = counter
-		counter += 1
-	end
-	hashß
+	# My attempt:
+	# hash = {}
+	# array.each do |e|
+	# 	hash[e] = 1
+	# end
+	# new_array = []
+	# hash.each do |animal, count|
+	# 	new_array = hash.select{|animal2, count2| animal2 == animal}
+	# end
+	# new_array
+
+	# Stack Overflow:
+	counts = Hash.new(0)
+	array.each { |e| counts[e] += 1 }
+	counts
 end
