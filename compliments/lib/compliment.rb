@@ -8,19 +8,9 @@ class Compliment
 		"You have an Izzy Blow — but non-suicidal — super pretty face vibe. Your look is killing it today. The way I picture you is in Lula magazine, floating on a sea of chiffon and blowing bubbles in a rainstorm. Turbans equal difficult-to-pull-off, but today, and probably usually, you are a queen of awesome.",
 		"Your messy hair bodes well for your care-free nature, but don’t overdo it. It’s more than a bit unkempt, and you could definitely use a trim. Having said that, you strike me as articulate and a good guy to go get sloshed with.",
 		"You win hottest beard in the room. Dude, we're in Dallas. You think we've slept together, but we haven't. But just so you know, I WOULD totally give in, like totally on the first date. You should call my manager and take me out and let me use your hair products in the morning. Stop being such a total girl, Euroman." ]
-	IMAGES = ["image1.jpg", 
-		"image2.jpg",
-		"image3.jpg", 
-		"image4.jpg",
-		"image5.jpg", 
-		"image6.jpg",
-		"image7.jpg",
-		"image8.png"  ]
  
  	def initialize
- 		length_plus_one = IMAGES.length
- 		num = rand(0...length_plus_one)
-		@message = MESSAGES[num]
-		@image = IMAGES[num]
+		@message = MESSAGES.sample
+		@image = Dir["./public/images/*"].sample[8..-1]
 	end
 end
