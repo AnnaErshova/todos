@@ -22,10 +22,10 @@ end
 
 def run_command(command)
   case command
-  when "help"
-    show_help
-  else
-    jukebox(command)
+    when "help"
+      show_help
+    else
+      jukebox(command)
   end
 end
 
@@ -35,6 +35,7 @@ def show_help
   print "'list' - lists the whole song library\n"
   print "or you can enter an artist's name to show that artist's songs\n"
   print "or you can enter a song title to play that song!\n"
+  puts
   run
 end
 

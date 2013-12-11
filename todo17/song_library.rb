@@ -5,11 +5,12 @@ def full_library
         :"The Joshua Tree" => {
           :songs => ["With or Without You", "Still Haven't Found What I'm Looking For", "Bullet the Blue Sky"]
         },
-        :"Zooropa" =>
+        :"Zooropa" => {
           :songs => ["Numb"]
         }
        }
-    },
+     },
+     
     :"Talking Heads" => {
       :albums => {
         :"Fear of Music" => {
@@ -20,6 +21,7 @@ def full_library
         }
       }
     },
+
     :"Huey Lewis and the News" => {
       :albums => {
         :"Sports" => {
@@ -27,5 +29,6 @@ def full_library
         }
       }
     }
+
   }
 end
