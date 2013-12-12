@@ -1,5 +1,4 @@
 require "./jukebox.rb"
-# require "./song_library.rb"
 
 def welcome
   puts "Welcome to Ruby Console Jukebox!"
@@ -27,6 +26,7 @@ def run_command(command)
     else
       jukebox(command)
   end
+  run
 end
 
 def show_help
