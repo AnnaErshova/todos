@@ -1,4 +1,4 @@
-require_relative "fibonacci_solution"
+require "./fib.rb"
 
 describe "fibo finder" do
   
