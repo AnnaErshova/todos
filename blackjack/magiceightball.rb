@@ -1,24 +1,49 @@
-#Magic 8-Ball
+####################
+### MAGIC 8-BALL ###
+####################
+class Magic
+	attr_accessor :input
+	ARRAY = [   "It is certain", 
+				"It is decidedly so", 
+				"Without a doubt", 
+				"Yes definitely", 
+				"You may rely on it", 
+				"As I see it yes", 
+				"Most likely", 
+				"Outlook good", 
+				"Yes", 
+				"Signs point to yes", 
+				"Reply hazy try again"
+				"Ask again later", 
+				"Better not tell you now", 
+				"Cannot predict now", 
+				"Concentrate and ask again", 
+				"Don't count on it", 
+				"My reply is no", 
+				"My sources say no", 
+				"Outlook not so good", 
+				"Very doubtful"              ]
 
-##Objective
-#Use methods to keep our code DRY.
+	def initialize
+		print "Welcome to the Magic 8-Ball. If you have a question enter 'y'. To quit, enter 'q': "
+		input = gets.chomp
+	end
 
-magic_8_ball_array = ["It is certain", "It is decidedly so", "Without a doubt", "Yes definitely", "You may rely on it", 
-"As I see it yes", "Most likely", "Outlook good", "Yes", "Signs point to yes", "Reply hazy try again"
-"Ask again later", "Better not tell you now", "Cannot predict now", "Concentrate and ask again", 
-"Don't count on it", "My reply is no", "My sources say no", "Outlook not so good", "Very doubtful"]
+	def continue
+		if true
+			if input == "y"
+				puts ARRAY.sample
+				print "Do you have another question? Enter 'y' for yes, enter 'q' to quit: "
+				input = gets.chomp
+			elsif input == "n" || input == 'q'
+				abort("Good luck!")
+			else
+				puts "Sorry, I didn't recognize that entry. Please type 'q' if you'd like to quit or 'y' if you'd like me to answer a question."
+				input = gets.chomp
+			end
+		end
+	end
 
-puts "I'm a Magic 8-Ball. If you have a question for me, enter 'y'. If not, enter 'n':"
-user_imput = gets.chomp
-
-if user_imput == "y"
-  puts magic_8_ball_array.sample
-elsif user_imput == "n"
-  puts "Sometimes I can't handle the truth either."
-else
-  puts "Sorry, I didn't recognize that entry. Please restart me if you have a question you'd like me to answer."
 end
-##Instructions
-#Build a ruby program that when run will ask the user if they want to shake the eight ball.
-#If the user answers yes, have it give a random message.
-#If the user says no, have it end.
+
+new_8_ball = Magic.new
