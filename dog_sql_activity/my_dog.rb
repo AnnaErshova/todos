@@ -81,9 +81,17 @@ class Dog
 			WHERE id = #{self.id}
 			")
 	end
+
+	def delete_by_id(id)
+		self.db.query("
+			DELETE FROM dogs
+			WHERE id = #{self.id}
+			")
+	end
+
 end
 
 doggie = Dog.find_by_id(3)
 p doggie
-doggie.update
+doggie.delete_by_id
 
