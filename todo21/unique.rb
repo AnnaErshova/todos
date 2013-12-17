@@ -47,6 +47,14 @@ class Array
 		hash
 	end
 
-	def 
+	def delete_items
+		hash.delete_if do |element, count_hash|
+			count_hash.each {|key, value| value >= 2}
+		end
+		hash
+	end
 
+	def add_back_items
+		#add back items that got deleted
+	end
 end
