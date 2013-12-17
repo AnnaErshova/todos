@@ -98,7 +98,7 @@ class Dog
 	end
 
 	def unsaved?(id)
-		if saved == true
+		if saved?(id) == true
 			return false
 		else
 			return true
