@@ -12,23 +12,22 @@ class Blackjack
 	def initialize
 		card_a = generate
 		card_b = generate
-		@sum = card_a + card_b)
-		"I just dealt ya two cards, and their sum is #{@sum}."
+		@sum = card_a + card_b
+		puts "I just dealt ya two cards, and their sum is #{@sum}."
 		hit?
 	end
 
 	def hit?
-		"If you want to hit enter 'h' and if you want to stay enter 's': "
+		print "If you want to hit enter 'h' and if you want to stay enter 's': "
 		 gets.chomp == "h" ? hit : stay
-		end
 	end
 
-	def end(message)
+	def finish(message)
 		abort(message)
 	end
 
 	def give_sum
-		"I dealt you another card and you're now at #{@sum}."
+		puts "I dealt you another card and you're now at #{@sum}."
 	end
 
 	def hit
@@ -37,7 +36,7 @@ class Blackjack
 			give_sum
 			hit?
 		else
-			end("I dealt another card and you hit #{@sum}. Better luck next time.")
+			finish("I dealt another card and you hit #{@sum}. Better luck next time.")
 		end
 	end
 
@@ -45,12 +44,12 @@ class Blackjack
 		card = generate
 		@sum = @sum + card
 		if sum > 21
-			end("The top card had a value of #{card}. Congratulations!")
+			finish("The top card had a value of #{card}. Congratulations!")
 		else
-			end("The top card had a value of #{card}. If you hit, you been at #{@sum}. Better luck next time.")
+			finish("The top card had a value of #{card}. If you hit, you been at #{@sum}. Better luck next time.")
 		end
 	end
 
 end
 
-new_game = Blackjack.initialize
+new_game = Blackjack.new
