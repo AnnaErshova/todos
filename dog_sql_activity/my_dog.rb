@@ -89,9 +89,17 @@ class Dog
 			")
 	end
 
+	def saved?(id)
+		if self.id.nil?
+			return false
+		else
+			return true
+		end
+	end
+
 end
 
 doggie = Dog.find_by_id(3)
 p doggie
-doggie.delete_by_id
+puts doggie.saved?(3).inspect
 
