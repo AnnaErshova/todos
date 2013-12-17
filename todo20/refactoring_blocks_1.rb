@@ -47,7 +47,7 @@ def pay_by_cash(order)
   end
 end
 
-def pay_by_store_credit(order, another_parameter)
+def pay_by_store_credit(order, current_user)
   pay_by(order) do |o| 
     o.payment :type => :store_credit
     current_user.store_credit -= order.cost 
