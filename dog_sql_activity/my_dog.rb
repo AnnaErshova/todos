@@ -32,7 +32,7 @@ class Dog
 		if results.first.nil?
 			puts "no such id found"
 		else
-			results.first
+			self.new_from_db(results.first)
 		end
 	end
 
@@ -45,7 +45,7 @@ class Dog
 		if results.first.nil?
 			puts "no such color found"
 		else
-			results.first
+			self.new_from_db(results.first)
 		end
 	end
 
@@ -58,7 +58,7 @@ class Dog
 		if results.first.nil?
 			puts "no such name found"
 		else
-			results.first
+			self.new_from_db(results.first)
 		end
 	end
 
@@ -69,22 +69,21 @@ class Dog
 			")
 	end
 
-	def update(name, color, id)
-		self.db.query("
-			UPDATE dogs
-			SET name = '#{name}, color = '#{color}'
-			WHERE id = #{id}
-			")
+	def self.new_from_db(row)
+		dog = Dog.new(row["name"], row["color"], row["id"])
+		dog
 	end
 
-
-
-	# def self.new_from_db(row)
-	# 	dog = Dog.new(row["name"], row["color"], row["id"])
-	# 	dog
-	# end
-
-
-
+	def update
+		self.db.query("
+			UPDATE dogs
+			SET name = '#{self.name}', color = '#{self.color}'
+			WHERE id = #{self.id}
+			")
+	end
 end
+
+doggie = Dog.find_by_id(3)
+p doggie
+doggie.update
 
