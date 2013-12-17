@@ -29,20 +29,7 @@ class Dog
 	# 		")
 	# end
 
-	def self.find(id)
-		db.query("
-			SELECT *
-			FROM dogs
-			WHERE id = #{id}
-			")
-		if results.first.nil?
-			"whimper"
-		else
-			self.new_from_db(results.first)
-		end
-	end
-
-	def new_from_db(row)
+	def self.new_from_db(row)
 		dog = Dog.new(row[:name], row[:color])
 		dog
 	end
@@ -54,12 +41,52 @@ class Dog
 			")
 	end
 
+	def self.find(id)
+		db.query("
+			SELECT *
+			FROM dogs
+			WHERE id = #{id}
+			")
+		if results.first.nil?
+			return "whimper"
+		else
+			self.new_from_db(results.first)
+		end
+	end
+
 	def self.find_by_name(name)
-		#insert method here
+		results = self.db.query("
+			SELECT *
+			FROM dogs
+			WHERE name = '#{name}'
+			")
+		if results.first.nil?
+			return "whimper"
+		else
+			self.wrap_results(results)
+		end
 	end
 
 	def self.find_by_color(color)
-		#insert method here
+		results = self.db.query("
+			SELECT *
+			FROM dogs
+			WHERE color = '#{color}'
+			")
+		if results.first.nil?
+			return "whimper"
+		else
+			self.wrap_results(results)
+		end
+	end
+
+
+	def wrap_results(results)
+		dogs = []
+		results.each do |dog|
+			dogs << self.new_from_db(db)
+		end
+		dogs
 	end
 
 end
