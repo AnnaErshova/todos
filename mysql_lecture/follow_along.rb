@@ -21,14 +21,7 @@ class Dog
 	def db
 		@@db
 	end
-
-	# def self.insert(name, color)
-	# 	self.db.query ("
-	# 		INSERT INTO dogs (name, color)
-	# 		values ('#{name}', '#{color}')
-	# 		")
-	# end
-
+	
 	def self.new_from_db(row)
 		dog = Dog.new(row[:name], row[:color])
 		dog
