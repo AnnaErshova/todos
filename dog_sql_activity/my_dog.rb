@@ -107,7 +107,13 @@ class Dog
 	end
 
 	def save
-		self.saved? ? self.update : self.insert
+		if self.saved?
+			return "sucessfully saved!"
+		elsif self.id.nil?
+			self.insert(self.name, self.color)
+		else
+			self.update
+		end
 	end
 
 end
