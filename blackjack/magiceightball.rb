@@ -13,8 +13,8 @@ class Magic
 				"Outlook good", 
 				"Yes", 
 				"Signs point to yes", 
-				"Reply hazy try again"
-				"Ask again later", 
+				"Reply hazy try again",
+				"Ask again later",
 				"Better not tell you now", 
 				"Cannot predict now", 
 				"Concentrate and ask again", 
@@ -26,21 +26,22 @@ class Magic
 
 	def initialize
 		print "Welcome to the Magic 8-Ball. If you have a question enter 'y'. To quit, enter 'q': "
-		input = gets.chomp
+		@input = gets.chomp
+		continue
 	end
 
 	def continue
-		if true
-			if input == "y"
-				puts ARRAY.sample
-				print "Do you have another question? Enter 'y' for yes, enter 'q' to quit: "
-				input = gets.chomp
-			elsif input == "n" || input == 'q'
-				abort("Good luck!")
-			else
-				puts "Sorry, I didn't recognize that entry. Please type 'q' if you'd like to quit or 'y' if you'd like me to answer a question."
-				input = gets.chomp
-			end
+		if @input == "y"
+			puts ARRAY.sample
+			print "Do you have another question? Enter 'y' for yes, enter 'q' to quit: "
+			@input = gets.chomp
+			continue
+		elsif @input == "n" || @input == 'q'
+			abort("Good luck!")
+		else
+			print "Sorry, I didn't recognize that entry. Enter 'y' if you have a question or 'q' to quit: "
+			@input = gets.chomp
+			continue
 		end
 	end
 
