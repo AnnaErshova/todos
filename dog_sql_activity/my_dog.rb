@@ -90,24 +90,25 @@ class Dog
 	end
 
 	def saved?(id)
-		if self.id.nil?
-			return false
-		else
-			return true
-		end
+		results = db.query("
+			SELECT *
+			FROM dogs
+			WHERE id = #{self.id}, name = '#{self.name}', color = '#{self.color}''
+			")
+		results.first.nil? ? return false : return true
 	end
 
 	def unsaved?(id)
-		if saved?(id) == true
-			return false
-		else
-			return true
-		end
+		saved?(id) ? return false : return true
+	end
+
+	def save
+		self.saved? ? self.update : self.insert
 	end
 
 end
 
-doggie = Dog.find_by_id(3)
-p doggie
-puts doggie.unsaved?(3).inspect
+doggie = Dog.find_by_id(2)
+doggie.name = "modified name"
+puts doggie.saved?(2).inspect
 
