@@ -97,9 +97,17 @@ class Dog
 		end
 	end
 
+	def unsaved?(id)
+		if saved == true
+			return false
+		else
+			return true
+		end
+	end
+
 end
 
 doggie = Dog.find_by_id(3)
 p doggie
-puts doggie.saved?(3).inspect
+puts doggie.unsaved?(3).inspect
 
