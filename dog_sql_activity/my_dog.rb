@@ -69,6 +69,13 @@ class Dog
 			")
 	end
 
+	def update(name, color, id)
+		self.db.query("
+			UPDATE dogs
+			SET name = '#{name}, color = '#{color}'
+			WHERE id = #{id}
+			")
+	end
 
 
 
@@ -81,4 +88,3 @@ class Dog
 
 end
 
-Dog.insert("All Mixed Up", "calico")
