@@ -29,15 +29,56 @@ class Dog
 			FROM dogs
 			WHERE id = #{id}
 			")
-		results.first
+		if results.first.nil?
+			puts "no such id found"
+		else
+			results.first
+		end
 	end
 
-	def self.new_from_db(row)
-		dog = Dog.new(row[:name], row[:color], row[:id])
-		dog
+	def self.find_by_color(color)
+		results = db.query("
+			SELECT *
+			FROM dogs
+			WHERE color = '#{color}'
+			")
+		if results.first.nil?
+			puts "no such color found"
+		else
+			results.first
+		end
 	end
+
+	def self.find_by_name(name)
+		results = db.query("
+			SELECT *
+			FROM dogs
+			WHERE name = '#{name}'
+			")
+		if results.first.nil?
+			puts "no such name found"
+		else
+			results.first
+		end
+	end
+
+	def self.insert(name, color)
+		self.db.query("
+			INSERT INTO dogs (name, color)
+			values ('#{name}', '#{color}')
+			")
+	end
+
+
+
+
+	# def self.new_from_db(row)
+	# 	dog = Dog.new(row["name"], row["color"], row["id"])
+	# 	dog
+	# end
+
+
 
 end
 
-dog_a = Dog.find_by_id(1)
-puts dog_a.inspect
+Dog.insert("All Mixed Up", "calico")
