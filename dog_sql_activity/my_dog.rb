@@ -89,17 +89,21 @@ class Dog
 			")
 	end
 
-	def saved?(id)
+	def saved?
 		results = db.query("
 			SELECT *
 			FROM dogs
-			WHERE id = #{self.id}, name = '#{self.name}', color = '#{self.color}''
+			WHERE id = #{self.id} and name = '#{self.name}' and color = '#{self.color}'
 			")
-		results.first.nil? ? return false : return true
+		if results.first.nil?
+			return false
+		else
+			return true
+		end
 	end
 
-	def unsaved?(id)
-		saved?(id) ? return false : return true
+	def unsaved?
+		!saved?
 	end
 
 	def save
@@ -110,5 +114,5 @@ end
 
 doggie = Dog.find_by_id(2)
 doggie.name = "modified name"
-puts doggie.saved?(2).inspect
+puts doggie.unsaved?.inspect
 
