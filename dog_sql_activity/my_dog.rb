@@ -116,9 +116,53 @@ class Dog
 		end
 	end
 
+	def ==(other_dog) # defining our own == method
+		self.id = other_dog.id
+	end
+
+	def attributes
+		# unclear about difference between inspect and attributes
+		say = "Name: #{self.name}. Color: #{self.color}"
+		if saved?
+			say += "ID: #{self.id}."
+		else
+			say += "I don't have an id assigned yet."
+		end
+	end	
+
+	def self.clear_all
+		db.query("DROP TABLE dogs")
+		db.query("CREATE TABLE dogs
+		(id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+		name TEXT,
+		color TEXT);")
+	end
+
+	def reload
+		result = self.db.query("
+			SELECT *
+			FROM dogs
+			WHERE id = '#{self.id}'
+			")
+		if result.nil?
+			return "sorry, no id in database"
+		else
+			if self.name != result.first["name"]
+				self.name = result.first["name"]
+			else
+				return "no need to revert"
+			end
+
+			if self.color != result.first["color"]
+				self.color = result.first["color"]
+			else
+				return "no need to revert"
+			end
+		end
+	end
+
 end
 
 doggie = Dog.find_by_id(2)
-doggie.name = "modified name"
-puts doggie.unsaved?.inspect
-
+doggie.name = "new name"
+puts doggie.reload
