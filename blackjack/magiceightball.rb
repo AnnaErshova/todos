@@ -22,7 +22,20 @@ class Magic
 				"My reply is no", 
 				"My sources say no", 
 				"Outlook not so good", 
-				"Very doubtful"              ]
+				"Very doubtful"          
+				"Yes, in due time.",
+				"Definitely not.",
+				"You will have to wait.",
+				"I have my doubts.",
+				"Outlook so so.",
+				"Looks good to me!",
+				"Who knows?",
+				"Looking good!",
+				"Probably.",
+				"Are you kidding?",
+				"Go for it!",
+				"Don't bet on it.",
+				"Forget about it."             ]
 
 	def initialize
 		print "Welcome to the Magic 8-Ball. If you have a question enter 'y'. To quit, enter 'q': "
@@ -47,4 +60,4 @@ class Magic
 
 end
 
-new_8_ball = Magic.new
+# new_8_ball = Magic.new

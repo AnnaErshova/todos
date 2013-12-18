@@ -13,7 +13,7 @@ class Blackjack
 		card_a = generate
 		card_b = generate
 		@sum = card_a + card_b
-		puts "I just dealt ya two cards, and their sum is #{@sum}."
+		puts "Dealt you two cards, and their sum is #{@sum}."
 		hit?
 	end
 
