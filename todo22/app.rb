@@ -14,6 +14,7 @@ class App < Sinatra::Application
 	post '/calculate' do
 		bd = Birthday.new(params["birthday"])
 		@message = bd.birthday?
+		@age = bd.age?
 		erb :results
 	end
 

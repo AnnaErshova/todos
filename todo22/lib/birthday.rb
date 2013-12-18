@@ -69,7 +69,11 @@ class Birthday
 		else
 			age = this_year.to_i - bd_yyyy.to_i + 1
 		end
-		"You will be #{age} year(s) old."
+		if age > 1
+			"You will be #{age} years old."
+		else
+			"You will be #{age} year old."
+		end
 	end
 
 end
