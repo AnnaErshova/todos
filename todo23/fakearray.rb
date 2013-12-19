@@ -20,18 +20,25 @@ end
 Note: I've intentionally omitted a step here where you'd have to somehow tell your class that were using an array of 1,2,3
 
 class FakeArray
+	NUM_1 = 1
+	NUM_2 = 2
+	NUM_3 = 3
 
-  def each
-    
-  end
+	attr_accessor :items
+	def initialize
+		
+	end
+	def each
 
-  def first
-    
-  end
+	end
 
-  def []()
-    
-  end
+	def first
+
+	end
+
+	def []()
+
+	end
 
 end
 
