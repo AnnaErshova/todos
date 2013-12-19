@@ -31,11 +31,11 @@ class FakeArray
 	end
 
 	def first
-
+		ele_1
 	end
 
 	def []()
-
+		# code should go here...
 	end
 
 end
