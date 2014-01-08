@@ -6,7 +6,7 @@ class Palindrome
 	end
 
 	def get_longest
-		rows = increment.max_by{|a| a.length}
+		increment.max_by{|a| a.length}
 	end
 
 	def increment
