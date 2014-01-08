@@ -5,6 +5,10 @@ class Palindrome
 		@string = string
 	end
 
+	def get_longest
+		rows = increment.max_by{|a| a.length}
+	end
+
 	def increment
 		array = []
 		max = string.length
@@ -14,10 +18,6 @@ class Palindrome
 			i += 1
 		end
 		array
-	end
-
-	def get_longest
-		rows = increment.max_by{|a| a.length}
 	end
 
 	def get_palindrome(i)
@@ -32,6 +32,3 @@ class Palindrome
 		new_string.insert(0, new_string[1..-1].reverse)
 	end
 end
-
-my_pal = Palindrome.new("racecar")
-puts my_pal.get_longest.inspect

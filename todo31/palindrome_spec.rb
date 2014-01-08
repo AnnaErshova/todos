@@ -1,5 +1,11 @@
 require "./palindromes.rb"
 
+RSpec.configure do |config|
+  config.color_enabled = true
+  config.tty = true
+  config.formatter = :documentation
+end
+
 describe Palindrome, "#get_longest" do
 
 	it "should return the longest palindromes" do
