@@ -1,13 +1,11 @@
-A palindrome is a string that is written the same forward as it is in reverse. Write a method to return the longest palindrome in a given string
-
 class Palindrome
 	attr_reader :string
 
-	def initialize(sting)
+	def initialize(string)
 		@string = string
 	end
 
-	def increment
+	def increment(string)
 		max = string.length
 		counter = 0
 		while i < max
@@ -16,10 +14,10 @@ class Palindrome
 	end
 
 	def get_palindrome(i)
-		
+		if string[i-1] == string[i+1]
+
+		end
 	end
-
-
 end
 
 longest_palindrome("afbbbfjdjklgdfdhfdkjfffhhfffjkdfhdhkyejejfjkd") #=> "dhfdkjfffhhfffjkdfhd"
