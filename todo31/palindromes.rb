@@ -24,7 +24,7 @@ class Palindrome
 			array << get_mirror_palindrome(second_i)
 			second_i += 1
 		end	
-		################################################# final array
+		################################################# returns final array
 		array
 	end
 
@@ -49,9 +49,9 @@ class Palindrome
 				new_string << string[i+counter_two]
 				counter_one += 1
 				counter_two += 1
-			end # while statement
-		end # if statement
+			end
+		end
 		new_string.insert(0, new_string.reverse)
-	end # method
+	end
 
-end #class
+end
