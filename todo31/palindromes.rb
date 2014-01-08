@@ -11,22 +11,21 @@ class Palindrome
 
 	def increment
 		max = string.length
+		array = []
 		################################################# mirrored around a letter
-		array_one = []
-		i = 0
-		while i < max
-			array_one << get_letter_palindrome(i)
-			i += 1
+		first_i = 0
+		while first_i < max
+			array << get_letter_palindrome(first_i)
+			first_i += 1
 		end
 		################################################# mirrored around nothing
-		array_two = []
-		count = 0
-		while count < max
-			array_two << get_mirror_palindrome(count)
-			count += 1
+		second_i = 0
+		while second_i < max
+			array << get_mirror_palindrome(second_i)
+			second_i += 1
 		end	
 		################################################# final array
-		array_one + array_two
+		array
 	end
 
 	def get_letter_palindrome(i)
@@ -50,13 +49,9 @@ class Palindrome
 				new_string << string[i+counter_two]
 				counter_one += 1
 				counter_two += 1
-			end
-		end
+			end # while statement
+		end # if statement
 		new_string.insert(0, new_string.reverse)
-	end
+	end # method
 
 end #class
-
-new_pal = Palindrome.new("fqbbqf")
-results = new_pal.increment
-puts results.inspect
