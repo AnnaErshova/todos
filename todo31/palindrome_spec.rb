@@ -1,8 +1,12 @@
-require ".palindromes.rb"
+require "./palindromes.rb"
 
-describe Palindromes, "#increment" do
+describe Palindrome, "#get_longest" do
 
-  it "should return an integer" do
-    expect(Palindromes.new("afbbbfjdjklgdfdhfdkjfffhhfffjkdfhdhkyejejfjkd").increment).should eq("dhfdkjfffhhfffjkdfhd") 
+	it "should return the longest palindromes" do
+		expect(Palindrome.new("afbbbfjdjklgdfdhfdkjfffhhfffjkdfhdhkyejejfjkd").get_longest).should eq("dhfdkjfffhhfffjkdfhd") 
+	end
 
+	it "should return the longest palindromes" do
+		expect(Palindrome.new("racecar").get_longest).should eq("racecar") 
+	end
 end
