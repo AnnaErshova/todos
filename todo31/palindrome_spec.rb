@@ -8,11 +8,11 @@ end
 
 describe Palindrome, "#get_longest" do
 
-	it "should return the longest palindromes" do
+	it "should return the longest palindrome" do
 		expect(Palindrome.new("afbbbfjdjklgdfdhfdkjfffhhfffjkdfhdhkyejejfjkd").get_longest).should eq("dhfdkjfffhhfffjkdfhd") 
 	end
 
-	it "should return the longest palindromes" do
-		expect(Palindrome.new("racecar").get_longest).should eq("racecar") 
+	it "should return the longest palindrome" do
+		expect(Palindrome.new("xftyracecarayyzbry").get_longest).should eq("racecar") 
 	end
 end
