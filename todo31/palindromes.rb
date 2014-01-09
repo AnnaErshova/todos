@@ -32,7 +32,7 @@ class Palindrome
 		new_string = ""
 		new_string << string[i]
 		counter = 1
-		while string[i-counter] == string[i+counter]
+		while string[i-counter] == string[i+counter] && i+counter < string.length && i-counter >= 0
 			new_string << string[i-counter]
 			counter += 1
 		end
@@ -44,7 +44,7 @@ class Palindrome
 		counter = 1
 		if string[i] == string[i+1]
 			new_string << string[i]
-			while string[i-counter] == string[i+1+counter]
+			while string[i-counter] == string[i+1+counter] && i+counter < string.length && i-counter >= 0
 				new_string << string[i-counter]
 				counter += 1
 			end
