@@ -41,13 +41,10 @@ class Palindrome
 
 	def get_mirror_palindrome(i)
 		new_string = ""
-		counter = 1
-		if string[i] == string[i+1]
-			new_string << string[i]
-			while string[i-counter] == string[i+1+counter] && i+1+counter < string.length && i-counter >= 0
-				new_string << string[i-counter]
-				counter += 1
-			end
+		counter = 0
+		while string[i-counter] == string[i+1+counter] && i+1+counter < string.length && i-counter >= 0
+			new_string << string[i-counter]
+			counter += 1
 		end
 		new_string.insert(0, new_string.reverse)
 	end
