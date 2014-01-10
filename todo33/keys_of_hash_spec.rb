@@ -6,18 +6,17 @@ RSpec.configure do |config|
   config.formatter = :documentation
 end
 
-describe Hash, "#keys_of" do
+describe 'keys_of' do
+  it 'should eq the keys of the entered value' do
+    expect ({a: 1, b: 2, c: 3}).keys_of(1).should eq([:a])
+  end
 
-	it "should return the keys that match the values" do
-	    expect(Hash.new({:a=>1, :b=>2, :c=>3}).keys_of(1)).should eq([:a]) 
-	end
+  it 'should eq the keys of the entered value' do
+    expect ({a: 1, b: 2, c: 3, d: 1}).keys_of(1).should eq([:a, :d])
+  end
 
-	it "should return the keys that match the values" do
-	    expect(Hash.new({:a=>1, :b=>2, :c=>3, :d=>1}).keys_of(1)).should eq([:a, :d]) 
-	end
-
-	it "should return the keys that match the values" do
-	    expect(Hash.new({:a=>1, :b=>2, :c=>3, :d=>1}).keys_of(1, 2)).should eq([:a, :b, :d]) 
-	end
+  it 'should eq the keys of the entered value' do
+    expect ({a: 1, b: 2, c: 3, d: 1}).keys_of(1, 2).should eq([:a, :b, :d])
+  end
 
 end
