@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Content:</b>
+  <%= @puppy.content %>
+</p>
+
+<p>
+  <b>Breed:</b>
+  <%= @puppy.breed_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_puppy_path(@puppy) %> |
+<%= link_to 'Back', puppies_path %>

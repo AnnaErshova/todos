@@ -1,0 +1,25 @@
+<%= form_for(@puppy) do |f| %>
+  <% if @puppy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@puppy.errors.count, "error") %> prohibited this puppy from being saved:</h2>
+
+      <ul>
+      <% @puppy.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </div>
+  <div class="field">
+    <%= f.label :breed_id %><br />
+    <%= f.number_field :breed_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
