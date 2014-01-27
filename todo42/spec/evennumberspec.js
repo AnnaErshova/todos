@@ -1,10 +1,10 @@
 describe( "firstEven", function() {
   it("should return the first even number in an array", function() {
-    expect(firstEven([3, 5, 7, 10])).toBe(30);
+    expect(firstEven([3, 5, 7, 10])).toBe(10);
   });      
 
   it("should return the first even number in an array", function() {
-    expect(firstEven([4, 5, 7])).toBe(50);
+    expect(firstEven([4, 5, 7])).toBe(4);
   });
 
   it("should return the first even number in an array", function() {
